@@ -31,6 +31,9 @@ obis_mofs = obis_mofs[[
 # === filter everything except fish_length
 print('keeping only "{}" MoFs'.format(measurement_type))
 obis_mofs = obis_mofs[obis_mofs['measurementType'] == measurement_type]
+# rename measurementValue column to fish_length
+obis_mofs = obis_mofs.rename(columns={'measurementValue': 'fish_length'})
+obis_mofs = obis_mofs.drop(['measurementValue', 'measurementType'])
 
 # === join the MoF & occurrence dataframes
 print("joining dataframes...")
