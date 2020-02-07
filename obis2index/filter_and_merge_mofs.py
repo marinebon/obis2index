@@ -1,3 +1,6 @@
+import sys
+from argparse import ArgumentParser
+
 import pandas as pd
 
 
@@ -62,5 +65,16 @@ def main(measurement_type):
     return obis_data_merged
 
 
+def parse_args(argv):
+    parser = ArgumentParser(
+        description="Filter & Merge occurrence & MoF dataframes"
+    )
+    parser.add_argument(
+        "measurement_type",
+        help="the one measurement or fact to not filter."
+    )
+
+
 if __name__ == "__main__":
-    main("fish_length")
+    args = parse_args(sys.arv[1:])
+    main(vars(args))
