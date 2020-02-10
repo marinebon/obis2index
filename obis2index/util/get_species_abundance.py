@@ -40,7 +40,7 @@ def get_species_abundance(species_name='Lachnolaimus maximus'):
     })
     header = [
         #   Row 1 is indicator name (main title of plot)
-        {"year": "indicator", "abundance": "abundance"},
+        #       (Row 1 header element will be injected by to_csv)
         #   Row 2 is units (y-axis label)
         {"year": "units", "abundance": "count / sampling-day"},
         #   Row 3 is spatial extent or other specifying information
