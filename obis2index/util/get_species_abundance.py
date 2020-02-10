@@ -34,6 +34,6 @@ def get_species_abundance(species_name='Lachnolaimus maximus'):
         "count": y
     })
 
-    output_df.to_csv("data/abundance_{}.csv".format(
+    output_df.to_csv("indicies/abundance_{}.csv".format(
         species_name.replace(' ', '_')
     ))
