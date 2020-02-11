@@ -1,0 +1,42 @@
+# .travis.yml sets up Travis CI to build & deploy the site.
+language: r
+python:
+  - 3.5
+sudo: false
+cache:
+  packages: true
+  directories:
+  - _cache
+  - $HOME/.cache/pip
+  - _virtenv
+  pip: true
+git:
+  depth: 3
+before_install:
+  - pip install --user virtualenv
+  - virtualenv _virtenv
+  - source ./_virtenv/bin/activate
+before_script:
+  # git setup
+  - git config --global user.name "Tylar Murray (Travis-CI)"
+  - git config --global user.email "tylarmurray@mail.usf.edu"
+  # r libs
+  - Rscript -e 'devtools::install_github("iobis/robis", ref="obis2")'
+  # python libs
+  - pip install -r requirements.txt
+script:
+  - ./calculate_indicators.sh
+after_success:
+  - echo === PUSHING TO GITHUB
+  - git add ./indicies/
+  - git commit -m "travis-ci.org indicators recalc [ci skip]"
+  - git push https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git HEAD:master
+notifications:
+  email:
+    recipients:
+    - tylarmurray@mail.usf.edu
+    on_success: change
+    on_failure: change
+env:
+  global:
+    secure: KTUpgZtIioDdi9WR4YCOeTuxTqcSdGnhfYJggKQ07mJ82uQNqh4712bkugVKAfMs0idtFbTAx3cVuGSGfxm/PsfYFFZc+RCGDAqx0a7dgYhwcEqkPgh/FqlCVgq+e3/5NfjqKJxkg/NSmTts8CfYvFiLoTYCeaFUgO2JliuJHMo1w1W/dizOMHyRRCtvm0b2hZ3n4511kOxwNaJ2vdCJXAC3P849mhjhhE8Bep56RZNXmPcVl+nnWGyY4t9rmETcayRB0wk48GZGLdW1jbyFa3mSEAXmLTDy4sOkJmz2awxvbU0pA/MYF+ZcAAX8bxZA7U2hS9dFUwY58nxV/EcAJJPFkL4k0WrfTHuH+becYNwU1I83L/9xDsIyCm+8+wucjLHp1v9rA5IdNVBfHLHWGCEqE/biUvbw/hY0hHczmJhTfkraWQ2Fksrr+qXkhknwm6g3OBmyAyrDpBRXl+DOovGLGQPa43R4OcB70vA+l0EmbEJmQ0vIUD/cB9bhhaCJKuK5nPNIqs51CWgrzpGwAikefFBYD2tIqi/4X92UXXWMDVDQQvroeuJkrzjFwslVvtX3NaUr2LYgkl9fELmlVMDjqraVdAjqGmYORxK6XYhqJ6rJ73QZ8YkLqH95G4KE+UX7vWxPFLTyf7hZqdl6YMCbea7AIPRquWx4K3+ineI=
