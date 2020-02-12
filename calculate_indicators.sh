@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 # download OBIS data
 Rscript ./obis2index/get_data.R
 # filter cols & merge MoFs
