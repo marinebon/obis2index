@@ -25,7 +25,7 @@ before_script:
   # r libs
   - Rscript -e 'devtools::install_github("iobis/robis", ref="obis2")'
   # python libs
-  - pip3 install --user -r requirements.txt
+  - pip3 install -r requirements.txt
 script:
   - ./calculate_indicators.sh
 after_success:
