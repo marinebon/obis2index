@@ -13,7 +13,7 @@ cache:
 git:
   depth: 3
 before_install:
-  - pip install --user virtualenv
+  - pip3 install --user virtualenv
   - virtualenv _virtenv
   - source ./_virtenv/bin/activate
 before_script:
@@ -23,7 +23,7 @@ before_script:
   # r libs
   - Rscript -e 'devtools::install_github("iobis/robis", ref="obis2")'
   # python libs
-  - pip install -r requirements.txt
+  - pip3 install --user -r requirements.txt
 script:
   - ./calculate_indicators.sh
 after_success:
