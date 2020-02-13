@@ -27,7 +27,12 @@ before_script:
   # python libs
   - pip3 install -r requirements.txt
 script:
-  - travis_wait 50 ./calculate_indicators.sh
+  # download OBIS data
+  - Rscript ./obis2index/get_data.R
+  # filter cols & merge MoFs
+  - python3 ./obis2index/filter_and_merge_mofs.py 'fish length'
+  # calculate abundances
+  - python3 -m obis2index.indicies.get_species_abundances
 after_success:
   - echo === PUSHING TO GITHUB
   - git add ./indicies/
