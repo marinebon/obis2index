@@ -27,7 +27,7 @@ before_script:
   # python libs
   - pip3 install -r requirements.txt
 script:
-  - ./calculate_indicators.sh
+  - travis_wait 50 ./calculate_indicators.sh
 after_success:
   - echo === PUSHING TO GITHUB
   - git add ./indicies/
