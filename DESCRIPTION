@@ -1,5 +1,5 @@
 Package: placeholder
 Title: Does not matter.
 Version: 0.0.1
-Imports: robis, devtools
+Imports: robis, devtools, glue
 Remotes: iobis/robis
