@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 # download OBIS data
 Rscript ./obis2index/indicies/abundance_of_black_grouper/1_get_data.R
 # filter cols & merge MoFs
