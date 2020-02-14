@@ -4,5 +4,5 @@ source('obis2index/util/fetch_data.R')
 
 fetch_data(
     'black_grouper',
-    scientific_name = 'Mycteroperca bonaci'
+    scientific_name = 'Epinephelus morio'
 )
