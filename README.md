@@ -11,8 +11,9 @@ Data will get downloaded into the `./data` subdirectory and the final indecies o
 
 # other data visualizations
 ```
-# see top measurement or facts in mof .csv
-python3 -m obis2index.explore.top_mofs data/FKNMS-black_grouper-mof.csv
+# see most frequent measurement or facts in mof .csv
+python3 -m obis2index.explore.top_column_values data/FKNMS-black_grouper-mof.csv measurementType
 
-
+# see most frequent values in samplingEffort column
+python3 -m obis2index.explore.top_column_values data/FKNMS-black_grouper-ocr.csv samplingEffort
 ```

@@ -10,10 +10,9 @@ from obis2index.util.plot_most_common_in_column \
     import plot_most_common_in_column
 
 
-def top_mofs(mof_csv_filepath):
-    print("showing top MoFs for file {}...".format(mof_csv_filepath))
+def top_column_values(mof_csv_filepath, column_name):
     obis_mofs = pd.read_csv(mof_csv_filepath, low_memory=False)
-    plot_most_common_in_column(df=obis_mofs, column='measurementType', TOP_N=9)
+    plot_most_common_in_column(df=obis_mofs, column=column_name, TOP_N=9)
 
 
 def parse_args(argv):
@@ -23,10 +22,14 @@ def parse_args(argv):
     )
     parser.add_argument(
         "mof_csv_filepath",
-        help="Measurment or Fact .csv file path"
+        help=".csv file path"
+    )
+    parser.add_argument(
+        "column_name",
+        help="name of column in dataframe to visualize"
     )
     return parser.parse_args(argv)
 
 
 if __name__ == "__main__":
-    top_mofs(**vars(parse_args(sys.argv[1:])))
+    top_column_values(**vars(parse_args(sys.argv[1:])))
