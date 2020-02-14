@@ -76,5 +76,5 @@ def parse_args(argv):
 
 
 if __name__ == "__main__":
-    args = parse_args(sys.arv[1:])
+    args = parse_args(sys.argv[1:])
     main(vars(args))
