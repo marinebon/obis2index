@@ -9,6 +9,10 @@ All scripts should be run from the root directory of this project.
 Data will get downloaded into the `./data` subdirectory and the final indecies output will be put in `./indicies`.
 
 
-# data explore
-`Rscript obis2index/explore/top_mofs/1_get_data.R` creates csv file.
-`python3 obis2index/explore/top_mofs/top_mofs.py` to visualize csv contents.
+# other data visualizations
+```
+# see top measurement or facts in mof .csv
+python3 -m obis2index.explore.top_mofs data/FKNMS-black_grouper-mof.csv
+
+
+```

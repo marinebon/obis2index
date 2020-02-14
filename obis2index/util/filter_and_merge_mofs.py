@@ -74,8 +74,8 @@ def parse_args(argv):
         "measurement_type",
         help="the one measurement or fact to not filter."
     )
+    return parser.parse_args(argv)
 
 
 if __name__ == "__main__":
-    args = parse_args(sys.argv[1:])
-    filter_and_merge_mofs(vars(args))
+    filter_and_merge_mofs(**vars(parse_args(sys.argv[1:])))
