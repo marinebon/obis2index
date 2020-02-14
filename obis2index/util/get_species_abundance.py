@@ -2,9 +2,10 @@ import pandas as pd
 
 
 def get_species_abundance(
-    data_file_path,
-    species_name='Lachnolaimus maximus'
+    filepath_id,
+    species_name
 ):
+    data_file_path = "data/FKNMS-{}-mrg.csv"
     obis_data = pd.read_csv(data_file_path, low_memory=False)
     filtered_df = obis_data[obis_data['scientificName'] == species_name]
     x = []
