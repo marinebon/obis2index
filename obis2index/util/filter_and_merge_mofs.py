@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 import pandas as pd
 
 
-def main(measurement_type):
+def filter_and_merge_mofs(filepath_id, measurement_type):
     """
         Merges MoF & occurrence dataframes & filters out all MoF columns except
         the column measurement_type.
@@ -15,10 +15,11 @@ def main(measurement_type):
             the only measurement we care about
             eg: 'fish length'
     """
-    # === variables
-    obis_records_file = 'data/FKNMS.csv'
-    obis_mofs_file = 'data/FKNMS_fish_len_mofs.csv'
-    obis_records_and_mofs_file = 'data/FKNMS_merged_{}.csv'.format(
+
+    obis_records_file = 'data/FKNMS-{}-ocr.csv'.format(filepath_id)
+    obis_mofs_file = 'data/FKNMS-{}-mof.csv'.format(filepath_id)
+    obis_records_and_mofs_file = "data/FKNMS-{}-mrg-{}.csv".format(
+        filepath_id,
         measurement_type
     )
 
@@ -77,4 +78,4 @@ def parse_args(argv):
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
-    main(vars(args))
+    filter_and_merge_mofs(vars(args))
