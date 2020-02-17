@@ -5,10 +5,10 @@ obis_records_file <- glue('{FILEPATH_PREFIX}-{filepath_id}-ocr.csv')
 
 # === fetch measurement or facts
 if (has_cache(obis_records_file)){
-    obis_mofs <- read.csv(obis_records_file)
+    obis_records <- read.csv(obis_records_file)
 } else {
     obis_records <- robis::occurrence(
         geometry = FKNMS_WKT
     )
-    write.csv(obis_mofs, file = obis_records_file)
+    write.csv(obis_records, file = obis_records_file)
 }
