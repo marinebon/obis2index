@@ -13,7 +13,7 @@ cache:
 git:
   depth: 3
 before_install:
-  - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 
+  - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
   - python3 get-pip.py
   - pip3 install --user virtualenv
   - virtualenv _virtenv
@@ -27,12 +27,7 @@ before_script:
   # python libs
   - pip3 install -r requirements.txt
 script:
-  # download OBIS data
-  - Rscript ./obis2index/get_data.R
-  # filter cols & merge MoFs
-  - python3 ./obis2index/filter_and_merge_mofs.py 'fish length'
-  # calculate abundances
-  - python3 -m obis2index.indicies.get_species_abundances
+  - ./calculate_indicators.sh
 after_success:
   - echo === PUSHING TO GITHUB
   - git add ./indicies/
