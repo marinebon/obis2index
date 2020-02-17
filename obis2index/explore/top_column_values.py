@@ -11,7 +11,10 @@ from obis2index.util.plot_most_common_in_column \
 
 
 def top_column_values(csv_filepath, column_name):
+    print("reading datafile...")
     obis_mofs = pd.read_csv(csv_filepath, low_memory=False)
+    print("{} rows read.".format(len(obis_mofs)))
+    print("creating plot...")
     plot_most_common_in_column(df=obis_mofs, column=column_name, TOP_N=9)
 
 
