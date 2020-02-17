@@ -14,7 +14,7 @@ fetch_data_multispecies <- function(
     scientific_names,
     roi_wkt=FKNMS_WKT,
     start_date=NULL, end_date=NULL,
-    measurement_type=NULL,
+    measurement_type=NULL
 ){
     obis_records_file <- glue('{FILEPATH_PREFIX}-{filepath_id}-ocr.csv')
     obis_mofs_file <- glue('{FILEPATH_PREFIX}-{filepath_id}-mof.csv')
@@ -23,7 +23,7 @@ fetch_data_multispecies <- function(
         obis_mofs <- read.csv(obis_mofs_file)
     }else{
         for(species in scientific_names){
-            this_obis_records, this_obis_mofs = fetch_data(
+            list[this_obis_records, this_obis_mofs] = fetch_data(
                 species, roi_wkt, start_date, end_date, measurement_type
             )
             obis_records <- rbind(obis_records, this_obis_records)
