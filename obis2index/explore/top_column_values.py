@@ -17,8 +17,8 @@ def top_column_values(csv_filepath, column_name):
 
 def parse_args(argv):
     parser = ArgumentParser(
-        description="Shows sorted count of the most common Measurement or "
-        "Facts"
+        description="Shows sorted count of the most common values in given"
+        "'csv_filepath' from given 'column_name'"
     )
     parser.add_argument(
         "csv_filepath",
