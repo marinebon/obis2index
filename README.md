@@ -15,5 +15,7 @@ Data will get downloaded into the `./data` subdirectory and the final indecies o
 python3 -m obis2index.explore.top_column_values data/FKNMS-black_grouper-mof.csv measurementType
 
 # see most frequent values in samplingEffort column
-python3 -m obis2index.explore.top_column_values data/FKNMS-black_grouper-ocr.csv samplingEffort
+python3 -m obis2index.explore.top_column_values data/FKNMS-everything-ocr.csv samplingEffort
+
+python3 -m obis2index.explore.top_column_values data/FKNMS-everything-ocr.csv year
 ```
