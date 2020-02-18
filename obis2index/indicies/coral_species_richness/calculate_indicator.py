@@ -8,7 +8,6 @@ print("loading data...")
 df = pd.read_csv(data_file_path, low_memory=False)
 total_rows = len(df)
 print("loaded {} rows.".format(total_rows))
-
 print("filtering non-Anthozoa...")
 # filter out non-coral species
 df = df[df['class'] == 'Anthozoa']
@@ -17,15 +16,16 @@ print("{}% Anthozoa records.".format(anth_rows/total_rows*100))
 
 print("calculating richness from {} rows...".format(len(df)))
 # richness is one row per year
-unique_years = df['year'].value_counts().sort_values()
-richness = pd.DataFrame({
-    "year": unique_years,
-    "richness": [0]*len(unique_years)
-})
-for year in unique_years:
+unique_years = df['year'].value_counts()
+richness = pd.DataFrame(columns=('year', 'richness'))
+richness.set_index('year')
+for year in unique_years.index:
     annualized_subset = df[df['year'] == year]
     # count unique values in species column
-    richness[year] = annualized_subset['scientificName'].value_counts()
+    count = len(annualized_subset['scientificName'].unique())
+    richness = richness.append(
+        {'year': int(year), 'richness': count}, ignore_index=True
+    )
 
 print('saving indicator .csv...')
 header = [
