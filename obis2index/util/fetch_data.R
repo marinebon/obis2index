@@ -34,7 +34,7 @@ fetch_data_multispecies <- function(
         write.csv(obis_records_chars, file = obis_records_file)
         write.csv(obis_mofs, file = obis_mofs_file)
     }
-    return(obis_records, obis_mofs)
+    return c(obis_records, obis_mofs)
 }
 
 
@@ -82,5 +82,5 @@ fetch_data <- function(
         )
         write.csv(obis_mofs, file = obis_mofs_file)
     }
-    return(obis_records, obis_mofs)
+    return c(obis_records, obis_mofs)
 }
