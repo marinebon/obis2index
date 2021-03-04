@@ -8,6 +8,10 @@ Scripts for exploratory data visualizations are in `obis2index/explore`.
 All scripts should be run from the root directory of this project.
 Data will get downloaded into the `./data` subdirectory and the final indecies output will be put in `./indicies`.
 
+Some output from this project can be found on slides 6 & 7 in [this g presentation](https://docs.google.com/presentation/d/1EBbswmn8SE4Ob9gaI_IoPZ8Pc24wGNTVZDGF3ck_gFo/edit?usp=sharing).
+These were generated using the `indicators_from_obis` project on Axiom's ResearchWorkspace.
+A link to this project (currently defunct) is [here](https://researchworkspace.com/project/5850658/files).
+
 
 # other data visualizations
 ```
