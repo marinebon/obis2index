@@ -1,6 +1,13 @@
+#!/usr/bin/env python
 """
 Shows sorted count of the most common Measurement or Facts.
 Use this to see what kind of MoFs your data subset contains.
+
+example usages:
+================
+[tylar@tylar-pc obis2index]$ python -m obis2index.explore.top_column_values \
+    data/FKNMS-everything-ocr.csv habitat
+
 """
 import sys
 import pandas as pd
