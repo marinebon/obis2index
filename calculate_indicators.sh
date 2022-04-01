@@ -1,4 +1,5 @@
 #!/bin/bash
+# this script is used to re-calculate all indicators and populate the .csv files
 set -e
 # === abundance
 Rscript ./obis2index/indicies/abundance_of_black_grouper/1_get_data.R
