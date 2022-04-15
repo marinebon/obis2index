@@ -1,0 +1,5 @@
+name: obis2index
+channels:
+  - conda-forge
+dependencies:
+  - python
