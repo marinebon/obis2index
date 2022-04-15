@@ -1,6 +1,13 @@
 # obis2index
-Calculate biodiversity health indicies from DwC Archive data pulled from OBIS.
+Calculate biodiversity health indicies from DwC Archive data (pulled from OBIS and|or GBIF).
 
+--------------------------------------------------------------------------
+
+☣️ This repo is being used as a jumping-off point for the BioDiversity Indicator Dev Group at the [2022 NOAA IOOS Code Sprint](https://ioos.github.io/ioos-code-sprint/)**. For more info please see [the code sprint topic page](https://ioos.github.io/ioos-code-sprint/topics/04-biodiversity-indicator-development/).
+
+📣 If you are new here please jump over to the "Discussions" tab and introduce yourself!
+
+--------------------------------------------------------------------------
 
 ## Usage
 ### easy-access mybinder jupyter notebooks
