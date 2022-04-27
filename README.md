@@ -7,6 +7,10 @@ Calculate biodiversity health indicies from DwC Archive data (pulled from OBIS a
 
 📣 If you are new here please jump over to the "Discussions" tab and introduce yourself!
 
+### quicklinks
+* [Google docs notes and overview](https://docs.google.com/document/d/1MFLYjC9WrGIVvh-BjAyB5SGHEOQM53qT72kVVxvLrS0/edit#heading=h.bpphew97473p)
+* [obisindicators R lib](https://github.com/marinebon/obisindicators) and [docs page](https://marinebon.org/obisindicators/)
+
 --------------------------------------------------------------------------
 
 ## Usage
