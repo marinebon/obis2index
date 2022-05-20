@@ -1,5 +1,6 @@
 # obis2index
-Calculate biodiversity health indicies from DwC Archive data (pulled from OBIS and|or GBIF).
+This repo is a home for materials related to calculating biodiversity health indicies from DwC Archive data (pulled from OBIS and|or GBIF).
+The code here is more like notes than it is a library or demo.
 
 --------------------------------------------------------------------------
 
