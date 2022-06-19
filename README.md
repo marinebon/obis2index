@@ -47,3 +47,5 @@ python3 -m obis2index.explore.top_column_values data/FKNMS-everything-ocr.csv ye
 Some output from this project can be found on slides 6 & 7 in [this g presentation](https://docs.google.com/presentation/d/1EBbswmn8SE4Ob9gaI_IoPZ8Pc24wGNTVZDGF3ck_gFo/edit?usp=sharing).
 These were generated using the `indicators_from_obis` project on Axiom's ResearchWorkspace.
 A link to this project (currently defunct) is [here](https://researchworkspace.com/project/5850658/files).
+
+* [GBIF globe # of records viewer in three.js](https://github.com/glaroc/gbif_globe)
